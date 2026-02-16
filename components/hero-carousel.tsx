@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const slides = [
   {
@@ -12,7 +13,8 @@ const slides = [
     subtitle: '10-Story Residential Tower',
     location: 'Malad East',
     description: '',
-    image: '/tillibai.png'
+    image: '/tillibai.png',
+    slug: 'tillibai-apartments'
   },
   {
     id: 2,
@@ -21,6 +23,7 @@ const slides = [
     location: 'Boisar',
     description: '',
     image: '/saishanti.png',
+    slug: 'sai-shanti-complex'
   },
   {
     id: 3,
@@ -29,6 +32,7 @@ const slides = [
     location: 'Bhayandar East',
     description: '',
     image: '/vasudevratna.png',
+    slug: 'vasudev-ratna'
   }
 ]
 
@@ -179,17 +183,19 @@ export function HeroCarousel() {
           {slides[index].description}
         </motion.p>
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-          className="group inline-flex items-center gap-3 border border-white px-8 py-4 rounded-full font-semibold transition-all duration-300 text-black bg-muted hover:bg-white hover:text-black"
-        >
-          Explore Project
-          <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-        </motion.button>
+        <Link href={`/properties/${slides[index].slug}`}>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+            className="group inline-flex items-center gap-3 border border-white px-8 py-4 rounded-full font-semibold transition-all duration-300 text-black bg-muted hover:bg-white hover:text-black"
+          >
+            Explore Project
+            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+          </motion.button>
+        </Link>
       </div>
 
       {/* Arrows */}

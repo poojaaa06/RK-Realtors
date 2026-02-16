@@ -240,14 +240,14 @@ export default async function PropertyPage({ params }: Props) {
                   <div className="bg-[#EDEFF2] p-4 rounded-lg border border-[#D8DCE3]">
                     <p className="text-xs text-[#13294B] font-medium mb-1">Varun Sharma</p>
                     <a href="tel:9833396669" className="text-base text-black hover:text-[#13294B] flex items-center gap-2 font-semibold transition-colors">
-                      <Phone className="w-4 h-4 text-[#13294B]" />
+                    
                       9833396669
                     </a>
                   </div>
                   <div className="bg-[#EDEFF2] p-4 rounded-lg border border-[#D8DCE3]">
                     <p className="text-xs text-[#13294B] font-medium mb-1">Rajendra Sharma</p>
                     <a href="tel:9819001948" className="text-base text-black hover:text-[#13294B] flex items-center gap-2 font-semibold transition-colors">
-                      <Phone className="w-4 h-4 text-[#13294B]" />
+                  
                       9819001948
                     </a>
                   </div>

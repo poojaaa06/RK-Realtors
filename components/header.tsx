@@ -30,7 +30,7 @@ export function Header({ variant = 'auto' }: HeaderProps) {
     {label:'Home' ,href:"/"},
     { label: 'Projects', href: '/#projects' },
     { label: 'About', href: '#about' },
-    { label: 'Why Us', href: '#whyus' },
+   
     { label: 'Contact', href: '#contact' },
   ]
 
@@ -64,7 +64,7 @@ export function Header({ variant = 'auto' }: HeaderProps) {
           whileHover={{ scale: 1.05 }}
           className="font-bold text-2xl tracking-wide"
         >
-          <span className="font-semibold">RK</span> Realtors
+          <span className="font-semibold">R K</span> Realtors
         </motion.div>
 
         {/* Desktop Nav */}

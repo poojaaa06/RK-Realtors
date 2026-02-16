@@ -99,14 +99,7 @@ export function ContactSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <motion.span 
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-            className="inline-block bg-white text-primary text-sm font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-4 border border-[#1B56FD]/20"
-          >
-            Get In Touch
-          </motion.span>
+          
           <h2 className="font-display text-4xl md:text-5xl font-bold mt-3 mb-4 text-[#F8FAFC]">
             Ready to Find Your{' '}
             <span className="relative">

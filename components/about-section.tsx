@@ -13,7 +13,7 @@ const stats = [
 
 export function AboutSection() {
   return (
-    <section className="py-20 md:py-32 px-6 overflow-hidden bg-white">
+    <section className=" px-6 overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Our Story Label */}
         <motion.div
@@ -42,10 +42,10 @@ export function AboutSection() {
             className="space-y-8"
           >
             {/* Headline */}
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-[#13294B]">
-              Your Vision Our Expertise Your Success{' '}
-              <span className="text-[#1A8CFF]">Get Noticed Generate Leads Dominate.</span> {/* Electric blue accent */}
-            </h2>
+           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-[#13294B]">
+  Transform Your Vision Into Success{' '}
+  <span className="text-[#1A8CFF]">Get Noticed. Generate Leads. Dominate.</span>
+</h2>
 
             {/* Large Image Placeholder */}
             <motion.div
@@ -131,33 +131,8 @@ export function AboutSection() {
             </div>
 
             {/* Team Avatars & CTA */}
-            <div className="flex items-center gap-4 pt-4">
-              {/* Avatar Group - Updated colors */}
-              <div className="flex -space-x-3">
-                {[1, 2, 3].map((i) => (
-                  <div
-                    key={i}
-                    className="w-12 h-12 rounded-full bg-[#13294B] border-2 border-white flex items-center justify-center text-white text-sm font-bold shadow-lg"
-                  >
-                    {String.fromCharCode(64 + i)}
-                  </div>
-                ))}
-              </div>
+          {/* Quick Contact */}
 
-              {/* Play Button - Updated colors */}
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-3 group"
-              >
-                <div className="w-12 h-12 rounded-full bg-[#1A8CFF] flex items-center justify-center group-hover:bg-[#13294B] transition-colors shadow-lg">
-                  <Play className="w-5 h-5 text-white fill-white ml-0.5" />
-                </div>
-                <span className="text-[#13294B] text-sm font-medium group-hover:text-[#1A8CFF] transition-colors">
-                  WATCH VIDEO
-                </span>
-              </motion.button>
-            </div>
           </motion.div>
         </div>
 
