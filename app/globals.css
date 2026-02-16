@@ -1,0 +1,290 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair), serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.875rem;
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    /* Light Mode - Clean White with Navy Accents */
+    --background: 0 0% 100%;  /* #FFFFFF - Pure white */
+    --foreground: 220 60% 15%;  /* #0F1A33 - Deep navy */
+    --card: 0 0% 100%;
+    --card-foreground: 220 60% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 60% 15%;
+    
+    /* Primary - Deep Navy */
+    --primary: 220 70% 25%;  /* #13294B - Rich navy */
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Bright White/Near White */
+    --secondary: 0 0% 98%;  /* #FAFAFA - Off-white */
+    --secondary-foreground: 220 70% 25%;
+    
+    /* Muted - Cool Gray */
+    --muted: 220 15% 94%;  /* #EDEFF2 - Light cool gray */
+    --muted-foreground: 220 50% 25%;
+    
+    /* Accent - Electric Blue (for energy) */
+    --accent: 210 100% 55%;  /* #1A8CFF - Bright blue */
+    --accent-foreground: 0 0% 100%;
+    
+    /* Borders - Light gray */
+    --border: 220 15% 88%;  /* #D8DCE3 - Light gray */
+    --input: 220 15% 88%;
+    --ring: 220 70% 25%;
+    
+    --chart-1: 220 70% 25%;
+    --chart-2: 210 100% 55%;
+    --chart-3: 220 60% 15%;
+    --chart-4: 220 15% 94%;
+    --chart-5: 0 0% 98%;
+    
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 60% 15%;
+    --sidebar-primary: 220 70% 25%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 96%;  /* #F5F7FA */
+    --sidebar-accent-foreground: 220 60% 15%;
+    --sidebar-border: 220 15% 88%;
+    --sidebar-ring: 220 70% 25%;
+  }
+  
+  .dark {
+    /* Dark Mode - Deep Navy with White Text */
+    --background: 220 70% 8%;  /* #060B14 - Almost black navy */
+    --foreground: 0 0% 100%;  /* #FFFFFF - Pure white */
+    --card: 220 70% 10%;  /* #0A1422 */
+    --card-foreground: 0 0% 100%;
+    --popover: 220 70% 10%;
+    --popover-foreground: 0 0% 100%;
+    
+    /* Primary - Bright Navy */
+    --primary: 220 80% 45%;  /* #1A3F99 - Bright navy */
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Dark Navy */
+    --secondary: 220 70% 15%;  /* #142B47 - Dark navy */
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Muted - Navy gray */
+    --muted: 220 50% 16%;  /* #142438 - Navy gray */
+    --muted-foreground: 0 0% 80%;  /* #CCCCCC - Light gray */
+    
+    /* Accent - Electric Blue (pops in dark) */
+    --accent: 210 100% 60%;  /* #4DA6FF - Bright electric */
+    --accent-foreground: 0 0% 100%;
+    
+    --border: 220 50% 20%;  /* #1A2F47 */
+    --input: 220 50% 20%;
+    --ring: 220 80% 45%;
+    
+    --chart-1: 220 80% 45%;
+    --chart-2: 210 100% 60%;
+    --chart-3: 220 70% 8%;
+    --chart-4: 220 50% 16%;
+    --chart-5: 0 0% 100%;
+    
+    --sidebar-background: 220 70% 8%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 220 80% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 50% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 50% 18%;
+    --sidebar-ring: 220 80% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Leaflet Map Styles - Light Clean Theme */
+.leaflet-container {
+  background: #F8F9FA !important;
+  font-family: var(--font-inter);
+}
+
+/* Attribution control */
+.leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.8) !important;
+  color: #666 !important;
+  font-size: 10px !important;
+  backdrop-filter: blur(4px);
+  border: 1px solid #E9DFC3 !important;
+  border-radius: 4px !important;
+}
+
+/* .leaflet-control-attribution a {
+  color: #1B56FD !important;
+} */
+/* 
+.leaflet-control-attribution a:hover {
+  color: #0118D8 !important;
+  text-decoration: none;
+} */
+
+/* Zoom controls */
+.leaflet-control-zoom {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.leaflet-control-zoom a {
+  background: white !important;
+  color: #0118D8 !important;
+  border: 1px solid #E9DFC3 !important;
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  font-size: 18px !important;
+  border-radius: 8px !important;
+  margin-bottom: 8px !important;
+  box-shadow: 0 2px 8px rgba(1, 24, 216, 0.1) !important;
+  transition: all 0.2s ease;
+}
+
+.leaflet-control-zoom a:hover {
+  background: #1B56FD !important;
+  color: white !important;
+  border-color: #1B56FD !important;
+  transform: scale(1.05);
+}
+
+.leaflet-control-zoom a.leaflet-disabled {
+  background: #F8F9FA !important;
+  color: #CCC !important;
+  border-color: #E9DFC3 !important;
+  opacity: 0.5;
+}
+
+/* Popup styling - Light theme */
+.leaflet-popup-content-wrapper {
+  background: white !important;
+  border: 1px solid #E9DFC3 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 16px rgba(1, 24, 216, 0.15) !important;
+  color: #0118D8 !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  color: #0118D8 !important;
+  font-size: 14px;
+  line-height: 1.5;
+  min-width: 240px;
+}
+
+.leaflet-popup-tip {
+  background: white !important;
+  border: 1px solid #E9DFC3 !important;
+  box-shadow: 0 2px 8px rgba(1, 24, 216, 0.1) !important;
+}
+
+.leaflet-popup-close-button {
+  color: #666 !important;
+  font-size: 18px !important;
+  font-weight: bold;
+  top: 8px !important;
+  right: 8px !important;
+  width: 24px !important;
+  height: 24px !important;
+  line-height: 22px !important;
+  border-radius: 4px !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #0118D8 !important;
+  background: #F3F6FF !important;
+}
+
+.custom-popup h3 {
+  font-family: var(--font-playfair);
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.custom-popup p {
+  color: #0118D8;
+  opacity: 0.7;
+  margin: 0 0 8px 0;
+}
+
+/* Custom scrollbar for popup */
+.leaflet-popup-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.leaflet-popup-content::-webkit-scrollbar-track {
+  background: #F8F9FA;
+}
+
+.leaflet-popup-content::-webkit-scrollbar-thumb {
+  background: #E9DFC3;
+  border-radius: 3px;
+}
+
+.leaflet-popup-content::-webkit-scrollbar-thumb:hover {
+  background: #1B56FD;
+}
