@@ -155,25 +155,7 @@ export function Footer() {
           </p>
 
           {/* Social Links - Added back since they were commented out */}
-          <div className="flex gap-3">
-            {socialLinks.map((social, idx) => {
-              const Icon = social.icon
-              return (
-                <motion.a
-                  key={idx}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 rounded-full bg-[#1A8CFF]/10 flex items-center justify-center text-[#1A8CFF] hover:bg-[#1B56FD] hover:text-[#F8FAFC] transition-all duration-300 border border-[#1B56FD]/20"
-                  aria-label={`Follow us on ${social.label}`}
-                >
-                  <Icon className="w-4 h-4" />
-                </motion.a>
-              )
-            })}
-          </div>
+         
         </motion.div>
       </div>
     </footer>
