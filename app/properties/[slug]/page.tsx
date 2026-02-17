@@ -19,7 +19,7 @@ const properties = [
     startDate: 'March 2023',
     completion: 'December 2027',
     status: 'ongoing',
-    image: '/VasudevHeights.png',
+    image: '/VasudevHeights.jpeg',
     coordinates: [19.2856, 72.8651],
   },
   {
@@ -32,7 +32,7 @@ const properties = [
     startDate: 'August 2024',
     completion: 'November 2028',
     status: 'upcoming',
-    image: '/vasudevratna.png',
+    image: '/VasudevRatna.jpeg',
     coordinates: [19.2801, 72.8571],
   },
   {
@@ -45,7 +45,7 @@ const properties = [
     startDate: 'February 2022',
     completion: 'April 2025',
     status: 'ongoing',
-    image: '/shreesawant.png',
+    image: '/ShreeShahwat.jpeg',
     coordinates: [19.2856, 72.8651],
   },
   {
@@ -71,7 +71,7 @@ const properties = [
     startDate: 'January 2008',
     completion: 'November 2010',
     status: 'completed',
-    image: '/saishanti.png',
+    image: '/SaiShanti.jpeg',
     coordinates: [19.8051, 72.7551],
   },
 ]

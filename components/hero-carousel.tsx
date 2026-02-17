@@ -22,7 +22,7 @@ const slides = [
     subtitle: 'Residential Complex',
     location: 'Boisar',
     description: '',
-    image: '/saishanti.png',
+    image: '/SaiShanti.jpeg',
     slug: 'sai-shanti-complex'
   },
   {
@@ -31,7 +31,7 @@ const slides = [
     subtitle: '50-Story Residential Tower',
     location: 'Bhayandar East',
     description: '',
-    image: '/vasudevratna.png',
+    image: '/VasudevRatna.jpeg',
     slug: 'vasudev-ratna'
   }
 ]

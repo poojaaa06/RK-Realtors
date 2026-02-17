@@ -28,10 +28,9 @@ export function Header({ variant = 'auto' }: HeaderProps) {
 
   const navItems = [
     {label:'Home' ,href:"/"},
-    { label: 'Projects', href: '/#projects' },
-    { label: 'About', href: '#about' },
-   
-    { label: 'Contact', href: '#contact' },
+    { label: 'Our Projects', href: '/#projects' },
+    { label: 'About Us', href: '#about' },
+    { label: 'Contact Us', href: '#contact' },
   ]
 
   // Function to handle brochure download
@@ -59,13 +58,18 @@ export function Header({ variant = 'auto' }: HeaderProps) {
     >
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between ">
         
-        {/* Logo */}
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          className="font-bold text-2xl tracking-wide"
-        >
-          <span className="font-semibold">R K</span> Realtors
-        </motion.div>
+        {/* Logo - Only font changed to Playfair Display */}
+    
+ <motion.div
+  whileHover={{ scale: 1.05 }}
+  className="font-serif text-2xl tracking-wide"
+>
+  <span className="font-bold">R K</span>{' '}
+  <span className="font-normal italic text-white/80">Realtors</span>
+</motion.div>
+
+
+
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-10 text-sm tracking-wide uppercase">
@@ -107,20 +111,20 @@ export function Header({ variant = 'auto' }: HeaderProps) {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-black/90 backdrop-blur-xl text-white px-6 py-6 space-y-6"
-        >
+      {/* Mobile Menu - Lighter color */}
+     {isOpen && (
+  <motion.div
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -20 }}
+    className="md:hidden bg-[#E8F0FE] backdrop-blur-xl text-[#13294B] px-6 py-6 space-y-6"
+  >
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="block text-lg hover:text-primary transition-colors"
+              className="block text-lg font-medium hover:text-[#1A8CFF] transition-colors"
             >
               {item.label}
             </a>
@@ -134,7 +138,7 @@ export function Header({ variant = 'auto' }: HeaderProps) {
               handleDownloadBrochure()
               setIsOpen(false)
             }}
-            className="w-full flex items-center justify-center gap-2 border border-white py-3 rounded-full hover:bg-white hover:text-black transition-all duration-300"
+            className="w-full flex items-center justify-center gap-2 border-2 border-[#13294B] text-[#13294B] py-3 rounded-full hover:bg-[#13294B] hover:text-white transition-all duration-300 font-medium"
           >
             <Download size={16} />
             Download Brochure

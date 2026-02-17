@@ -1,19 +1,26 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Building, Award, Users, TrendingUp, Play, Image as ImageIcon } from 'lucide-react'
+import { Building, Award, Users, TrendingUp, Play, Image as ImageIcon, CheckCircle } from 'lucide-react'
 import Image from 'next/image'
 
 const stats = [
-  { label: 'Projects Completed', value: '6+' },
-  { label: 'Happy Families', value: '5000+' },
+  { label: 'Projects Completed', value: '5+' },
+  { label: 'Happy Families', value: '1000+' },
   { label: 'Years of Excellence', value: '20+' },
-  { label: 'Ongoing Projects', value: '3+' },
+  { label: 'Ongoing Projects', value: '2+' },
+]
+
+const offerings = [
+  'Market-aligned architectural planning',
+  'Assured on-time project delivery',
+  'High operational reliability',
+  'Transparent stakeholder coordination',
 ]
 
 export function AboutSection() {
   return (
-    <section className=" px-6 overflow-hidden bg-white">
+    <section className=" py-8 px-6 overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Our Story Label */}
         <motion.div
@@ -26,7 +33,7 @@ export function AboutSection() {
           <div className="flex items-center gap-3 mb-12">
             <div className="w-1 h-12 bg-[#13294B]" /> {/* Deep navy */}
             <span className="text-[#13294B] text-sm font-medium tracking-wider uppercase">
-              Our Story
+              About Us
             </span>
           </div>
         </motion.div>
@@ -41,11 +48,10 @@ export function AboutSection() {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            {/* Headline */}
-           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-[#13294B]">
-  Transform Your Vision Into Success{' '}
-  <span className="text-[#1A8CFF]">Get Noticed. Generate Leads. Dominate.</span>
-</h2>
+            {/* Headline - from brochure vision */}
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-[#13294B]">
+              Mumbai-based developer since 2000, delivering value-driven projects in Mumbai Suburbs & Mira-Bhayandar.
+            </h2>
 
             {/* Large Image Placeholder */}
             <motion.div
@@ -54,7 +60,7 @@ export function AboutSection() {
               className="relative h-[400px] rounded-2xl overflow-hidden border border-[#D8DCE3] shadow-lg group"
             >
               <Image
-                src="/bigimage.jpeg"
+                src="/tillibai.png"
                 alt="RK Realtors Team"
                 fill
                 className="object-cover"
@@ -80,7 +86,7 @@ export function AboutSection() {
                 className="relative h-[180px] rounded-xl overflow-hidden border border-[#D8DCE3] shadow-md group"
               >
                 <Image
-                  src="/smallimage1.jpg"
+                  src="/vasudevratna.png"
                   alt="Luxury Project"
                   fill
                   className="object-cover"
@@ -94,7 +100,7 @@ export function AboutSection() {
                 className="relative h-[180px] rounded-xl overflow-hidden border border-[#D8DCE3] shadow-md group"
               >
                 <Image
-                  src="/smallimage2.jpg"
+                  src="/VasudevHeights.png"
                   alt="Luxury Project"
                   fill
                   className="object-cover"
@@ -104,11 +110,19 @@ export function AboutSection() {
               </motion.div>
             </div>
 
-            {/* Description Text */}
+            {/* Description Text - condensed from brochure */}
             <div className="space-y-4 bg-[#EDEFF2] p-6 rounded-xl border border-[#D8DCE3]">
               <p className="text-[#13294B] text-sm md:text-base leading-relaxed">
-                With over two decades of excellence in real estate development, RK Realtors has established itself as a premier builder of premium residential spaces. Our commitment to architectural excellence and customer satisfaction has made us a trusted name.
+                Established in 2000 by Rajendra Kumar Sharma, RK Realtors is built on trust, performance & ethical practices. We focus on structured planning and disciplined execution.
               </p>
+              <div className="grid grid-cols-2 gap-2 pt-2">
+                {offerings.map((offer, idx) => (
+                  <div key={idx} className="flex items-center gap-1 text-xs text-[#13294B]/80">
+                    <CheckCircle className="w-3 h-3 text-[#1A8CFF]" />
+                    <span>{offer}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Stats Grid */}
@@ -130,21 +144,33 @@ export function AboutSection() {
               ))}
             </div>
 
-            {/* Team Avatars & CTA */}
-          {/* Quick Contact */}
-
+            {/* Quick Contact */}
+            <div className="flex items-center justify-between bg-white p-4 rounded-xl border border-[#D8DCE3]">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-[#1A8CFF]/10 rounded-full flex items-center justify-center">
+                  <Users className="w-5 h-5 text-[#1A8CFF]" />
+                </div>
+                <div>
+                  <p className="text-xs text-[#13294B]/60">Founded by</p>
+                  <p className="font-medium text-[#13294B]">Rajendra K. Sharma</p>
+                </div>
+              </div>
+              <div className="text-xs text-[#13294B]/60 italic">est. 2000</div>
+            </div>
           </motion.div>
         </div>
 
-        {/* Why Choose Section */}
+        {/* Why Choose Section - minimalist from brochure vision */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mt-20 relative"
+          className="mt-20 relative text-center"
         >
-          {/* Decorative Background */}
+          <p className="text-lg md:text-xl text-[#13294B]/80 italic max-w-3xl mx-auto">
+            "Creating inspiring developments with innovative design, superior quality & sustainable living"
+          </p>
         </motion.div>
       </div>
     </section>

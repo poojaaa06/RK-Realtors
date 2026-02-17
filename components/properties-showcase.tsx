@@ -13,7 +13,7 @@ const properties = [
     area: 'Mira Road (E)',
     location: 'Mira Road East',
     status: 'ongoing',
-    image: '/VasudevHeights.png',
+    image: '/VasudevHeights.jpeg',
     imageAlt: 'Vasudev Heights residential tower',
   },
   {
@@ -23,7 +23,7 @@ const properties = [
     area: 'Bhayandar East',
     location: 'Bhayandar East',
     status: 'upcoming',
-    image: '/vasudevratna.png',
+    image: '/VasudevRatna.jpeg',
     imageAlt: 'Vasudev Ratna skyscraper',
   },
   {
@@ -33,7 +33,7 @@ const properties = [
     area: 'Mira Road (E)',
     location: 'Mira Road',
     status: 'ongoing',
-    image: '/shreesawant.png',
+    image: 'ShreeShahwat.jpeg',
     imageAlt: 'Shree Shashwat residential building',
   },
   {
@@ -53,7 +53,7 @@ const properties = [
     area: 'Boisar',
     location: 'Boisar',
     status: 'completed',
-    image: '/saishanti.png',
+    image: '/SaiShanti.jpeg',
     imageAlt: 'Sai Shanti Complex',
   },
 ]

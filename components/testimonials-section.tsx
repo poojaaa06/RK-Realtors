@@ -418,10 +418,10 @@ export function TestimonialsSection() {
           className="text-center mt-10"
         >
           <a
-            href="#"
+            href="https://www.google.com/search?sca_esv=f85aee35ab456974&sxsrf=ANbL-n7_tsqQ88APuItxOzuxMxQTpV8Vng:1771333373751&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_x_0oiywDRuGiZ2X6wN5W91knVGmG1TxNyTfU_auYHksyW9I-k_bE5bY1WisJJEesEUmbw-NCjeo8o1iXxFD_pW8fe7KxiWQlbRyC4PLexUJMg915cg%3D%3D&q=RK+Mumbai+Realtors+Reviews&sa=X&ved=2ahUKEwiUtZWEy-CSAxUdn68BHYmTHOUQ0bkNegQINBAH&biw=1536&bih=730&dpr=1.25"
             className="inline-flex items-center gap-2 text-[#13294B] hover:text-[#13294B] font-medium transition-colors group"
           >
-            View all 138 reviews on Google
+            View all reviews on Google
             <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
         </motion.div>
