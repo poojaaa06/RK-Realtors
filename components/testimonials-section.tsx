@@ -4,114 +4,63 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Star, ChevronLeft, ChevronRight, Quote, ExternalLink } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
-// Real Google reviews from the data provided - only positive ones
+// Real Google reviews from the data provided - only the 8 specific reviews
 const reviews = [
   {
     id: 1,
-    name: 'Kushagra',
+    name: 'Varun Sharma',
     rating: 5,
-    text: 'Had an amazing experience with RK Realtors! Aniket Tawri and team went above and beyond to explore and find me a good property. They truly understand their clients\' needs. Couldn\'t have asked for a more reliable and friendly team.',
-    time: '10 months ago',
-    likes: 0,
-    response: 'Thank you for your kind words. Aniket is a gem'
+    text: 'Highly skilled team with professional service loved it ❤️',
+    likes: 1,
   },
   {
     id: 2,
-    name: 'Kumar Tahilramani',
+    name: 'Rimgim Mishra',
     rating: 5,
-    text: 'Fantastic good service & very trustworthy tram. I strongly recommend',
-    time: 'a month ago',
+    text: 'RK realtors is a promising and trustworthy company. Vouch for their work ethics',
     likes: 0,
-    response: 'Thank you for your kind words'
   },
   {
     id: 3,
-    name: 'Bhavna Pani',
+    name: 'akhiwesh',
     rating: 5,
-    text: 'Ravi Kevalramani and his team are excellent. Especially his team members Krunal Raichura and also Pawan, handheld me through an unforeseen and unfortunate crisis. I cannot recommend their services enough. This company is very honest and professional.',
-    time: 'a year ago',
-    likes: 2,
-    response: 'Thank you for your kind words Bhavna'
+    text: 'RK Realtors has a very professional team. They understand the needs of shopkeepers and business owners, especially regarding space planning and commercial value. Highly satisfied with the interaction.',
+    likes: 0,
   },
   {
     id: 4,
-    name: 'Supriya A',
+    name: 'Raj Ade',
     rating: 5,
-    text: 'Having been away from Mumbai for over 12 years we were quite overwhelmed with house hunting. Piyush and Akshay helped us through the process like champs. Understood our brief perfectly and stayed with us at every step of the way. One of the most professional reality firms out there. Can\'t recommend them enough. 7 out of 5 stars.',
-    time: 'a year ago',
-    likes: 1,
-    response: 'Thank you for your kind words Supriya'
+    text: 'RK Realtors shows strong market knowledge and professionalism. Their project planning and commitment give confidence to investors and buyers alike.',
+    likes: 0,
   },
   {
     id: 5,
-    name: 'Ashutosh Shinde',
+    name: 'Akhilesh waghmare',
     rating: 5,
-    text: 'Have always been following Mr Ravi on social media and thought the company deals with only premium properties. But this thought ended when during my own rental house search i stumbled upon an advertisement on a flat which was little closer to my budget. They helped me find a great place!',
-    time: 'a year ago',
-    likes: 3,
-    response: 'Thank you Ashutosh for your kind words.'
+    text: 'We had a very good experience interacting with RK Realtors regarding our society redevelopment discussions. Their approach is practical, honest, and well-planned. Looking forward to working together.',
+    likes: 0,
   },
   {
     id: 6,
-    name: 'Uzi Abid',
+    name: 'Praneel Shah',
     rating: 5,
-    text: 'Wanna start my saying something about piyush Bhatia who helped me put my apartment on rent. He\'s such a nice guy. The best. So humble so understanding. We need more people like Piyush. He helped me and was available every single time I needed him.',
-    time: 'a year ago',
-    likes: 1,
-    response: 'Thank you Uzi for taking the time and reviewing us.'
+    text: 'I had a very smooth and professional experience with R K REALTORS in Malad. The team was honest, responsive, and really understood my property requirements. They guided me properly through every step and made the whole process simple and stress-free. Highly recommend them if you’re looking for reliable property management and genuine service in Mumbai!',
+    likes: 0,
   },
   {
     id: 7,
-    name: 'Raashi Sanghavi',
+    name: 'syed mohammad kaif',
     rating: 5,
-    text: 'It was lovely working with Aniket from RK Realtors. They\'re super professional and the first thing that impressed me was an Excel sheet which had answers to every question that I would need to make a decision of buying a house.',
-    time: 'a year ago',
+    text: 'Best developer with good finishing work',
     likes: 0,
-    response: 'Thank you for giving us your business and sharing your review'
   },
   {
     id: 8,
-    name: 'Alka Paul',
+    name: 'Kapil Baheti',
     rating: 5,
-    text: 'Excellent Service. Extremely pro active. Thorough Professionals by taking care of every detail necessary. Their assistant Santosh is very sincere and took care of all the things mentioned to him. He got us a new tenant for our flat and did everything perfectly.',
-    time: '6 years ago',
-    likes: 1,
-    response: 'Thank you for Kind Words. It was a pleasure serving you.'
-  },
-  {
-    id: 9,
-    name: 'Ronak Morbia',
-    rating: 5,
-    text: 'RK was great to work with, a true super star! This was our first home sale. They held our hand through the entire process. Educated us on the market and made us feel like we were in the best of hands. We had a quick sale and more importantly a smooth transaction. I will definitely work with them again.',
-    time: '9 years ago',
+    text: 'Had a wonderful experience working with this real estate firm. The team is highly professional, knowledgeable, and genuinely committed to helping clients find the right property. They guided me through every step with transparency and made the entire process smooth and stress-free.',
     likes: 0,
-    response: 'We know you have choices and thank you for choosing us.'
-  },
-  {
-    id: 10,
-    name: 'Ishaan Kapse',
-    rating: 5,
-    text: 'Akshay and Aniket put in a lot of effort to help us find the perfect place. They were organised and punctual. They understood our requirements perfectly and worked them through with us. Would definitely recommend.',
-    time: 'a year ago',
-    likes: 0,
-    response: 'Thank you Ishaan'
-  },
-  {
-    id: 11,
-    name: 'Kanishk Jayant',
-    rating: 5,
-    text: 'Ravi in Hindi/Sanskrit means the Sun God...and that\'s so true when it comes to Mr. Ravi Kewalramani and his associates....let there be light and there is light at the end of the tunnel. He is very ably assisted by his team member. Exceptional service!',
-    time: '2 years ago',
-    likes: 0,
-  },
-  {
-    id: 12,
-    name: 'Rohan Lavsi',
-    rating: 5,
-    text: 'Piyush has been a great help. He is one of best real estate agents I have met in last 20years.',
-    time: 'a year ago',
-    likes: 1,
-    response: 'Thank you for your kind words.'
   }
 ]
 
@@ -172,6 +121,35 @@ export function TestimonialsSection() {
     })
   }
 
+  // Calculate star display for 4.7 rating
+  const renderStars = () => {
+    const stars = []
+    const fullStars = 4
+    const hasHalfStar = true // 4.7 rating has a half star
+    
+    for (let i = 0; i < 5; i++) {
+      if (i < fullStars) {
+        stars.push(
+          <Star key={i} className="w-4 h-4 fill-[#FBBC05] text-[#FBBC05]" />
+        )
+      } else if (i === fullStars && hasHalfStar) {
+        stars.push(
+          <div key={i} className="relative">
+            <Star className="w-4 h-4 text-gray-300" />
+            <div className="absolute inset-0 overflow-hidden w-[70%]">
+              <Star className="w-4 h-4 fill-[#FBBC05] text-[#FBBC05]" />
+            </div>
+          </div>
+        )
+      } else {
+        stars.push(
+          <Star key={i} className="w-4 h-4 text-gray-300" />
+        )
+      }
+    }
+    return stars
+  }
+
   return (
     <section className="relative py-20 md:py-32 px-4 sm:px-6 overflow-hidden bg-white">
       {/* Grid Background - Updated to navy */}
@@ -211,7 +189,7 @@ export function TestimonialsSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          {/* Google Reviews Badge - Updated colors */}
+          {/* Google Reviews Badge - Updated with 4.7 rating and 17 reviews */}
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
@@ -238,22 +216,11 @@ export function TestimonialsSection() {
             </svg>
             <span className="text-[#13294B] font-semibold">Google Reviews</span>
             <div className="flex items-center gap-1 border-l border-[#D8DCE3] pl-3">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`w-4 h-4 ${
-                      i < 4
-                        ? 'fill-[#FBBC05] text-[#FBBC05]'
-                        : i === 4 
-                          ? 'fill-[#FBBC05] text-[#FBBC05] opacity-30'
-                          : 'text-gray-300'
-                    }`}
-                  />
-                ))}
+              <div className="flex items-center">
+                {renderStars()}
               </div>
-              <span className="text-sm font-bold text-[#13294B]">4.3</span>
-              <span className="text-xs text-[#13294B]/60">(138 reviews)</span>
+              <span className="text-sm font-bold text-[#13294B]">4.7</span>
+              <span className="text-xs text-[#13294B]/60">(17 reviews)</span>
             </div>
           </motion.div>
 
@@ -365,7 +332,6 @@ export function TestimonialsSection() {
                       <div className="flex items-center justify-between">
                         <div>
                           <p className="font-semibold text-[#13294B]">{review.name}</p>
-                          <p className="text-xs text-[#13294B]/60">{review.time}</p>
                         </div>
                         {review.likes > 0 && (
                           <div className="flex items-center gap-1 text-xs text-[#13294B]/60">
@@ -374,14 +340,6 @@ export function TestimonialsSection() {
                           </div>
                         )}
                       </div>
-
-                      {/* Owner Response - Updated colors */}
-                      {review.response && (
-                        <div className="mt-3 pt-3 border-t border-[#D8DCE3]">
-                          <p className="text-xs text-[#13294B] font-medium mb-1">RK Realtors responded:</p>
-                          <p className="text-xs text-[#13294B]/70 italic">{review.response}</p>
-                        </div>
-                      )}
                     </div>
                   </motion.div>
                 ))}
@@ -418,7 +376,7 @@ export function TestimonialsSection() {
           className="text-center mt-10"
         >
           <a
-            href="https://www.google.com/search?sca_esv=f85aee35ab456974&sxsrf=ANbL-n7_tsqQ88APuItxOzuxMxQTpV8Vng:1771333373751&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_x_0oiywDRuGiZ2X6wN5W91knVGmG1TxNyTfU_auYHksyW9I-k_bE5bY1WisJJEesEUmbw-NCjeo8o1iXxFD_pW8fe7KxiWQlbRyC4PLexUJMg915cg%3D%3D&q=RK+Mumbai+Realtors+Reviews&sa=X&ved=2ahUKEwiUtZWEy-CSAxUdn68BHYmTHOUQ0bkNegQINBAH&biw=1536&bih=730&dpr=1.25"
+            href="https://www.google.com/search?sca_esv=0ccad900ef2a9a41&hl=en&gl=in&biw=1536&bih=730&sxsrf=ANbL-n5dVnE3zGhA7OrPcabXz1xWTuDvSg:1771410934221&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOSSmy_sqa_mN-cE_AIINsx7tukaFtpsbGZz5r60HYmqnn8O04MWsuSRFIXtxMLbH7Sb-RgM31WWyx50mPMMghQmSApX2&q=R+K+REALTORS+Reviews&sa=X&ved=2ahUKEwjT6_D76-KSAxVGkq8BHXJAKLQQ0bkNegQIIxAF"
             className="inline-flex items-center gap-2 text-[#13294B] hover:text-[#13294B] font-medium transition-colors group"
           >
             View all reviews on Google
