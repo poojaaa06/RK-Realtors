@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react'
+import { Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -28,10 +28,8 @@ export function Footer() {
   ]
 
   const socialLinks = [
-    { icon: Facebook, href: 'https://facebook.com/rkrealtors', label: 'Facebook' },
-    { icon: Instagram, href: 'https://instagram.com/rkrealtors', label: 'Instagram' },
-    { icon: Linkedin, href: 'https://linkedin.com/company/rkrealtors', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/rkrealtors', label: 'Twitter' },
+    { icon: Facebook, href: 'https://www.facebook.com/share/1aNEoYEDSU/?mibextid=wwXIfr', label: 'Facebook' },
+    { icon: Instagram, href: 'https://www.instagram.com/rkrealtors8?igsh=ZjdscDhicHZzZ3o0', label: 'Instagram' },
   ]
 
   const containerVariants = {
@@ -154,8 +152,24 @@ export function Footer() {
             © {currentYear} RK Realtors. All rights reserved. | Built with excellence.
           </p>
 
-          {/* Social Links - Added back since they were commented out */}
-         
+          {/* Social Links - Only Facebook and Instagram */}
+          <div className="flex items-center gap-4">
+            {socialLinks.map((social) => {
+              const Icon = social.icon
+              return (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-[#1A8CFF]/10 flex items-center justify-center hover:bg-[#1A8CFF]/20 transition-all duration-300 hover:scale-110 group"
+                  aria-label={`Follow us on ${social.label}`}
+                >
+                  <Icon className="w-5 h-5 text-[#94A3B8] group-hover:text-[#1A8CFF] transition-colors" />
+                </a>
+              )
+            })}
+          </div>
         </motion.div>
       </div>
     </footer>

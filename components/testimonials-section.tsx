@@ -6,57 +6,51 @@ import { useState, useEffect } from 'react'
 
 // Real Google reviews from the data provided - only the 8 specific reviews
 const reviews = [
+ 
   {
     id: 1,
-    name: 'Varun Sharma',
-    rating: 5,
-    text: 'Highly skilled team with professional service loved it ❤️',
-    likes: 1,
-  },
-  {
-    id: 2,
     name: 'Rimgim Mishra',
     rating: 5,
     text: 'RK realtors is a promising and trustworthy company. Vouch for their work ethics',
     likes: 0,
   },
   {
-    id: 3,
+    id: 2,
     name: 'akhiwesh',
     rating: 5,
     text: 'RK Realtors has a very professional team. They understand the needs of shopkeepers and business owners, especially regarding space planning and commercial value. Highly satisfied with the interaction.',
     likes: 0,
   },
   {
-    id: 4,
+    id: 3,
     name: 'Raj Ade',
     rating: 5,
     text: 'RK Realtors shows strong market knowledge and professionalism. Their project planning and commitment give confidence to investors and buyers alike.',
     likes: 0,
   },
   {
-    id: 5,
+    id: 4,
     name: 'Akhilesh waghmare',
     rating: 5,
     text: 'We had a very good experience interacting with RK Realtors regarding our society redevelopment discussions. Their approach is practical, honest, and well-planned. Looking forward to working together.',
     likes: 0,
   },
   {
-    id: 6,
+    id: 5,
     name: 'Praneel Shah',
     rating: 5,
     text: 'I had a very smooth and professional experience with R K REALTORS in Malad. The team was honest, responsive, and really understood my property requirements. They guided me properly through every step and made the whole process simple and stress-free. Highly recommend them if you’re looking for reliable property management and genuine service in Mumbai!',
     likes: 0,
   },
   {
-    id: 7,
+    id: 6,
     name: 'syed mohammad kaif',
     rating: 5,
     text: 'Best developer with good finishing work',
     likes: 0,
   },
   {
-    id: 8,
+    id: 7,
     name: 'Kapil Baheti',
     rating: 5,
     text: 'Had a wonderful experience working with this real estate firm. The team is highly professional, knowledgeable, and genuinely committed to helping clients find the right property. They guided me through every step with transparency and made the entire process smooth and stress-free.',
