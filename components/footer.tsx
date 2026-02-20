@@ -57,10 +57,10 @@ export function Footer() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-12"
         >
-          {/* Brand Section - Takes up more space now */}
-          <motion.div variants={itemVariants} className="lg:col-span-2">
+          {/* Brand Section - Takes 5 columns on large screens */}
+          <motion.div variants={itemVariants} className="lg:col-span-6">
             <a href="/" className="font-display font-bold text-2xl mb-4 inline-block">
               <span className="text-[#1A8CFF]">RK</span>
               <span className="text-[#F8FAFC]"> Realtors</span>
@@ -110,25 +110,65 @@ export function Footer() {
             </div>
           </motion.div>
 
-          {/* Link Sections - Now only 2 sections */}
-          {sections.map((section, idx) => (
-            <motion.div key={idx} variants={itemVariants}>
-              <h3 className="font-semibold text-lg mb-4 text-[#1A8CFF]">{section.title}</h3>
-              <ul className="space-y-2">
-                {section.links.map((link) => (
-                  <li key={link.name}>
+          {/* Quick Links Section - Takes 2 columns */}
+          <motion.div variants={itemVariants} className="lg:col-span-2">
+            <h3 className="font-semibold text-lg mb-4 text-[#1A8CFF]">{sections[0].title}</h3>
+            <ul className="space-y-2">
+              {sections[0].links.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-[#94A3B8] hover:text-[#1B56FD] transition-colors text-sm inline-block hover:translate-x-1 transform duration-200"
+                    aria-label={`Go to ${link.name}`}
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Projects Section - Takes 2 columns */}
+          <motion.div variants={itemVariants} className="lg:col-span-2">
+            <h3 className="font-semibold text-lg mb-4 text-[#1A8CFF]">{sections[1].title}</h3>
+            <ul className="space-y-2">
+              {sections[1].links.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-[#94A3B8] hover:text-[#1B56FD] transition-colors text-sm inline-block hover:translate-x-1 transform duration-200"
+                    aria-label={`Go to ${link.name}`}
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Social Section - Takes 3 columns */}
+          <motion.div variants={itemVariants} className="lg:col-span-2">
+            <h3 className="font-semibold text-lg mb-4 text-[#1A8CFF]">Social</h3>
+            <ul className="space-y-2">
+              {socialLinks.map((social) => {
+                const Icon = social.icon
+                return (
+                  <li key={social.label}>
                     <a
-                      href={link.href}
-                      className="text-[#94A3B8] hover:text-[#1B56FD] transition-colors text-sm inline-block hover:translate-x-1 transform duration-200"
-                      aria-label={`Go to ${link.name}`}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#94A3B8] hover:text-[#1B56FD] transition-colors text-sm inline-flex items-center gap-2 hover:translate-x-1 transform duration-200"
+                      aria-label={`Follow us on ${social.label}`}
                     >
-                      {link.name}
+                      <Icon className="w-4 h-4" />
+                      {social.label}
                     </a>
                   </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+                )
+              })}
+            </ul>
+          </motion.div>
         </motion.div>
 
         {/* Divider */}
@@ -151,25 +191,6 @@ export function Footer() {
           <p className="text-[#94A3B8] text-sm">
             © {currentYear} RK Realtors. All rights reserved. | Built with excellence.
           </p>
-
-          {/* Social Links - Only Facebook and Instagram */}
-          <div className="flex items-center gap-4">
-            {socialLinks.map((social) => {
-              const Icon = social.icon
-              return (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-[#1A8CFF]/10 flex items-center justify-center hover:bg-[#1A8CFF]/20 transition-all duration-300 hover:scale-110 group"
-                  aria-label={`Follow us on ${social.label}`}
-                >
-                  <Icon className="w-5 h-5 text-[#94A3B8] group-hover:text-[#1A8CFF] transition-colors" />
-                </a>
-              )
-            })}
-          </div>
         </motion.div>
       </div>
     </footer>
